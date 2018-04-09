@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/bootstrap.min.css" type="text/html">
+</head>
+
+<body>
+    {{> header}}
+    <form action="/send" method="GET">
+        <div class="form-group">
+            <input type="text" placeholder="Name" name="name" class="form-control" id="mes-name">
+        </div>
+    	</br>
+        <div class="form-group">
+            <input type="text" placeholder="Email" name="email" class="form-control" id="email">
+        </div>
+        </br>
+        <div class="form-group">
+            <textarea id="comment" placeholder="Messages..." name="comment" class="form-control"></textarea>
+        </div>
+        </br>
+        <button class="btn btn-primary">Send Now</button>
+    </form>
+    {{> footer}}
+</body>
+
+</html>

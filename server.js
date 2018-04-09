@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 
 var app = express();
 
@@ -52,7 +53,22 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
 	res.render('about.hbs', {
-		pageTitle: 'About Page',
+		pageTitle: 'About Page'
+		//currentYear: new Date().getFullYear()
+	})
+});
+
+app.get('/send', (req, res) => {
+	/*res.render('about.hbs', {
+		pageTitle: 'About Page'
+		//currentYear: new Date().getFullYear()
+	})*/
+	console.log("req.body : ", req.body);
+});
+
+app.get('/contact', (req, res) => {
+	res.render('contactus.hbs', {
+		pageTitle: 'ContactUs Page'
 		//currentYear: new Date().getFullYear()
 	})
 });
@@ -63,4 +79,6 @@ app.get('/bad', (req, res) => {
 	});
 });
 
-app.listen('3000');
+app.listen(port, () => {
+	console.log(`Server is up on port ${port}`)
+});
